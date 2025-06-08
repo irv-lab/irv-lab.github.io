@@ -15,7 +15,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'      # Gemfile에 맞춰 조정
+          ruby-version: '3.2'      # Gemfile에 맞춰 조정
           bundler-cache: true      # bundle install 캐시
 
       - name: Install dependencies
