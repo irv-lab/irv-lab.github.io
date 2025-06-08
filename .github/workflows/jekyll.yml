@@ -1,0 +1,33 @@
+name: Build & Deploy Jekyll site
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'      # Gemfile에 맞춰 조정
+          bundler-cache: true      # bundle install 캐시
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site
+        # docs/ 폴더에 Jekyll 빌드 결과물을 생성합니다
+        run: bundle exec jekyll build --destination docs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main      # main 브랜치의 docs/ 를 업데이트
+          publish_dir: docs
