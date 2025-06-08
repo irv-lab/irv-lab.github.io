@@ -44,3 +44,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: main      # main 브랜치의 docs/ 를 업데이트
           publish_dir: docs
+          force_orphan: true
