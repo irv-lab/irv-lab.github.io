@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-remote_theme: yihui/Al-Folio
+theme: null
 title: IRVLab # the website title (if blank, full name will be used instead)
 subtitle: Intelligent Robotics and Vision Lab
 first_name: Kyunghyun
@@ -215,15 +215,7 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
-  - jekyll-seo-tag
-  - jekyll-coffeescript
-  - jekyll-commonmark-ghpages
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-relative-links
-  - jekyll-optional-front-matter
-  - jekyll-default-layout
-  - jekyll-titles-from-headings
+
 # Sitemap settings
 defaults:
   - scope:
