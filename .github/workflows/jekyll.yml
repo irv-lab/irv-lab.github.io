@@ -2,15 +2,19 @@ name: Build & Deploy Jekyll site
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - source    # 소스 커밋이 발생하는 브랜치
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout source
         uses: actions/checkout@v3
+        with:
+          ref: source
+
       - name: Install system packages
         run: |
           sudo apt-get update
@@ -19,29 +23,27 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'      # Gemfile에 맞춰 조정
-          bundler-cache: true      # bundle install 캐시
+          ruby-version: '3.2'
+          bundler-cache: true
 
       - name: Setup Python for Jupyter
         uses: actions/setup-python@v4
         with:
-         python-version: '3.x'
- 
+          python-version: '3.x'
+
       - name: Install Jupyter
-        run: |
-          pip install notebook
+        run: pip install notebook
 
       - name: Install dependencies
         run: bundle install
 
       - name: Build site
-        # docs/ 폴더에 Jekyll 빌드 결과물을 생성합니다
         run: bundle exec jekyll build --destination docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main      # main 브랜치의 docs/ 를 업데이트
+          publish_branch: main      # 배포 전용 브랜치
           publish_dir: docs
           force_orphan: true
