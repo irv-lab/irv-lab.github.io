@@ -1,5 +1,10 @@
 name: Build & Deploy Jekyll site
 
+permissions:
+  contents: write      # repo 컨텐츠(코드)를 push 하기 위해 필요
+  pages: write         # GitHub Pages 설정 갱신에 필요
+  id-token: write      # peaceiris/actions-gh-pages 가 내부적으로 사용
+
 on:
   push:
     branches:
