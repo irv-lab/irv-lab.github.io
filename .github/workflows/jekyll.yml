@@ -11,12 +11,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'      # Gemfile에 맞춰 조정
           bundler-cache: true      # bundle install 캐시
+
+      - name: Setup Python for Jupyter
+        uses: actions/setup-python@v4
+        with:
+         python-version: '3.x'
+ 
+      - name: Install Jupyter
+        run: |
+          pip install notebook
 
       - name: Install dependencies
         run: bundle install
