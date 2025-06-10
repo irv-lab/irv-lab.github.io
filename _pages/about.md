@@ -1,34 +1,39 @@
 ---
 layout: about
-title: about
+title: IRV-Lab
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: 
 
 profile:
-  align: right
-  image: prof_pic.jpg
+  align: center
+  image: 
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info: 
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+cover: true
+
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: 10 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+__Welcome to IRV-LAB!__ Our lab is part of the Department of Computer Engineering. 
+Our lab focuses on key areas such as, but not limited to, the following:
+- **Reinforcement Learning**: Developing and analyzing algorithms that enable agents to learn optimal behaviors through interaction with complex environments, with applications ranging from game playing to real-world control tasks. 
+- **Robotics**: Designing autonomous robotic systems and control architectures that leverage learning-based methods for perception, planning, and adaptive decision-making in dynamic, unstructured settings.
+- **Computer Vision**: Creating advanced perception models that extract semantic and geometric information from images and video, enabling tasks such as object recognition, scene understanding, and vision-guided control.
+- **Multi-modal Sensor Fusion**: Integrating data from heterogeneous sensors (e.g., cameras, LiDAR, IMUs, thermal images) to build robust, complementary representations of the environment for improved situational awareness and decision-making.
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+---
+**[Notice]. We are always looking for self-motivated and passionate students to join our team. If you’re interested, please visit the [Joining Us](/joining/) page for more information.**
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+---
