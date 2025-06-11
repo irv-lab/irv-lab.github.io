@@ -1,0 +1,80 @@
+---
+layout: page
+---
+<!-- 상단: 이미지와 간단한 소개 문구 -->
+<section id="intro" style="display:flex; align-items:flex-start; gap:2rem; margin-bottom:3rem;">
+  <div class="intro-image" style="flex:0 0 300px;">
+    {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+    {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+    {%
+      include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true
+    %}
+  </div>
+  <div class="intro-text" style="flex:1;">
+    {{ page.introduction | markdownify }}
+  </div>
+</section>
+{% if page.education %}
+<section id="education" style="margin-bottom:3rem;">
+  <h3 style="font-weight: bold;">Education</h3>
+  {% assign order = "Ph.D.,MS,BS" | split: "," %}
+  {% for level in order %}
+    {% for edu in page.education %}
+      {% if edu.degree contains level %}
+        <div class="edu-item" style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:1rem;">
+          <div style="flex:0 0 1.5rem; text-align:center;">
+            <i class="fas fa-graduation-cap" style="margin-top:0.25rem;"></i>
+          </div>
+          <div style="flex:1; color:#777;">
+            <strong>{{ edu.degree }} in {{ edu.major }}, {{ edu.year }}</strong><br>
+            {{ edu.institution }}<br>
+            {% if edu.thesis %}Thesis: “{{ edu.thesis }}”<br>{% endif %}
+            {% if edu.advisor %}Advisor: {{ edu.advisor }}<br>{% endif %}
+            {% if edu.gpa %}GPA: {{ edu.gpa }}{% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</section>
+{% endif %}
+{% if page.experiences %}
+<section id="experiences" style="margin-bottom:3rem;">
+  <h3 style="font-weight:bold;">Experience</h3>
+  {% for exp in page.experiences %}
+    <div class="exp-item" style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:1rem;">
+      <div style="flex:0 0 1.5rem; text-align:center;">
+        <i class="fas fa-briefcase" style="margin-top:0.25rem;"></i>
+      </div>
+      <div style="flex:1; color:#777;">
+        <strong>{{ exp.institution }}</strong><br>
+        {{ exp.role }}, {{ exp.location }}<br>
+        <em>{{ exp.dept }}</em>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% endif %}
+{% if page.academic %}
+<section id="academic" style="margin-bottom:3rem;">
+  <h3 style="font-weight:bold;">Academic Activities</h3>
+  {% comment %}역할(role) 목록을 추출{% endcomment %}
+  {% assign roles = page.academic | map: "role" | uniq %}
+  {% for role in roles %}
+    <!-- 역할별 제목 -->
+    <h5 style="margin-top:1.5rem; font-weight:bold;">{{ role | capitalize }}</h5>
+    {% assign items = page.academic | where: "role", role %}
+    {% for act in items %}
+      <div class="acad-item" style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+        <div style="flex:0 0 1.5rem; text-align:center;">
+          <i class="fas fa-circle fa-xs" style="margin-top:0.25rem;"></i>
+        </div>
+        <div style="flex:1; color:#555;">
+          <strong>{{ act.venue }}</strong>{% if act.start %} ({{ act.start }}-){% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</section>
+{% endif %}
