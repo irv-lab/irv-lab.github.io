@@ -1,7 +1,7 @@
 ---
-layout: instructor
-title: Instructor
-permalink: /instructor/
+layout: professor
+title: Professor
+permalink: /professor/
 subtitle: 
 
 nav: true
