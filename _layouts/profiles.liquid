@@ -6,29 +6,31 @@ layout: page
     {% if page.profiles %}
       {% assign categories = "Faculty,PhD,Master,Undergraduate" | split: "," %}
       {% for category in categories %}
-        {% assign filtered = page.profiles | where: "category", category %}
-        {% if filtered.size > 0 %}
-          <h2>{{ category }}</h2>
-          {% for profile in filtered %}
-            {% if forloop.index0 == 0 or forloop.index0 | modulo:2 == 0 %}
-              <div class="row" style="display:flex; justify-content: flex-start; gap:1.5rem; margin-bottom:1.5rem;">
-            {% endif %}
-
-            <div class="col" style="flex: 0 0 48%; display:flex; align-items:flex-start; gap:1rem;">
-              <img
-                src="{{ profile.image | prepend: 'assets/img/profiles/' | relative_url }}"
-                alt="{{ profile.name }}"
-                style="width:100px; height:auto; border-radius:5%;" />
-              <div class="profile-details" style="text-align:left;">
-                <div class="profile-name" style="font-weight: bold; color: var(--global-theme-color);">{{ profile.name }}</div>
-                <div class="profile-info">{{ profile.info }}</div>
-                <div class="profile-email" style="font-size:0.9em; font-weight: bold; color:#555;">{{ profile.email }}</div>
+        {% assign filtered_profiles = page.profiles | where: "category", category %}
+        {% if filtered_profiles.size > 0 %}
+          <h2 style="clear:both; margin-top:2rem;">{{ category }}</h2>
+          <div class="row" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:2rem; margin-bottom:2rem;">
+            {% for profile in filtered_profiles %}
+              <div class="col" style="box-sizing: border-box;">
+                {% if profile.image %}
+                  <img
+                    src="{{ profile.image | prepend: 'assets/img/profiles/' | relative_url }}"
+                    alt="{{ profile.name }}"
+                    style="width:100px; height:auto; border-radius:5%;" />
+                {% else %}
+                  <img
+                    src="{{ 'assets/img/profiles/blank.jpg' | relative_url }}"
+                    alt="{{ profile.name }}"
+                    style="width:100px; height:auto; border-radius:5%;" />
+                {% endif %}
+                <div class="profile-details" style="text-align:left;">
+                  <div class="profile-name" style="font-weight: bold; color: var(--global-theme-color);">{{ profile.name }}</div>
+                  <div class="profile-info">{{ profile.info }}</div>
+                  <div class="profile-email" style="font-size:0.9em; font-weight: bold; color:#555;">{{ profile.email }}</div>
+                </div>
               </div>
-
-            {% if forloop.index0 | modulo:2 == 1 or forloop.last %}
-              </div>
-            {% endif %}
-          {% endfor %}
+            {% endfor %}
+          </div>
         {% endif %}
       {% endfor %}
     {% endif %}
