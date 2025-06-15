@@ -13,17 +13,17 @@ profiles:
     info: Assistant Professor
     email: kyunghyunlee@gachon.ac.kr
   - name: Minseok Choi
-    image: 
+    image: under_minseokchoi.jpeg
     category: Undergraduate
     info: 
     email: choeminseog04@gmail.com
   - name: Minseo Kim
-    image: 
+    image: under_minseokim.jpg
     category: Undergraduate
     info: 
     email: minseo11@gachon.ac.kr
   - name: Eonji Lim
-    image: 
+    image: under_eonjilim.png
     category: Undergraduate
     info: 
     email: lej555a@naver.com
