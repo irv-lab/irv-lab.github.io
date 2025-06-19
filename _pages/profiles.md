@@ -27,5 +27,9 @@ profiles:
     category: Undergraduate
     info: 
     email: lej555a@naver.com
-
+  - name: Chunwoong Park
+    image: master_chunwoongpark.jpg
+    category: Master
+    info: 
+    email: chak5778@gmail.com
 ---
