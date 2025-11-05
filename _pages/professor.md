@@ -56,7 +56,7 @@ experiences:
   - institution: The Robotics Institute, Carnegie Mellon University
     location: Pittsburgh PA, USA
     role: Visiting Researcher
-    dept: "Advisor: Jean Oh, Martial Hebert"
+    dept: "Advisor: Jean Oh"
   - institution: UVify
     location: Seoul, Korea
     role: CPO
