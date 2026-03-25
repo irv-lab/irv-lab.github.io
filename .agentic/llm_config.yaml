@@ -1,0 +1,72 @@
+default_provider: local
+providers:
+  local:
+    base_url: http://100.103.250.5:6006/v1
+    model: openai/gpt-oss-20b
+    api_key: EMPTY
+    temperature: 0.2
+    max_tokens: 3000
+    timeout: 300
+    max_turns: 20
+    max_history_size: 10
+    max_retries: 2
+  subprocess:
+    command:
+    - claude
+    - --dangerously-skip-permissions
+    - --print
+    - --strict-mcp-config
+    timeout: 3600
+  codex:
+    command:
+    - codex
+    - exec
+    - --sandbox
+    - danger-full-access
+    - --dangerously-bypass-approvals-and-sandbox
+    - --skip-git-repo-check
+    timeout: 3600
+  gemini:
+    command:
+    - gemini
+    - -y
+    timeout: 3600
+  stub: null
+agents:
+  team_leader:
+    llm: codex 
+    model: codex-gpt-5.4
+    temperature: 0.3
+    light_llm: codex 
+    light_model: codex-gpt-5.3-codex-spark
+    light_temperature: 0.1
+  chronicler:
+    llm: codex
+    model: codex-gpt-5.4-mini
+    temperature: 0.1
+  reporter:
+    llm: openai
+    model: codex-gpt-5.3-codex-spark
+    temperature: 0.1
+  team_members:
+  - id: member0
+    llm: openai
+    model: codex-gpt-5.4
+    temperature: 0.5
+  - id: member1
+    llm: openai 
+    model: codex-gpt-5.3-codex
+    temperature: 0.5
+  coder:
+    llm: codex 
+    model: codex-gpt-5.4
+    temperature: 0.2
+    max_retries: 3
+features:
+  skills:
+    enabled: true
+    import_enabled: true
+    wf_m_context_enabled: true
+    wf_m_execution_enabled: false
+    allow_untrusted_context: true
+    enable_trusted_execution: false

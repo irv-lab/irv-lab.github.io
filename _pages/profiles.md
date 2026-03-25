@@ -27,6 +27,11 @@ profiles:
     category: Undergraduate
     info: 
     email: lej555a@naver.com
+  - name: Sahoon Hong
+    image: under_sahoonhong.jpeg
+    category: Undergraduate
+    info:
+    email: hoonie8530@gmail.com
   - name: Chunwoong Park
     image: master_chunwoongpark.jpg
     category: Master

@@ -1,0 +1,8 @@
+workflows:
+  default:
+    stages:
+    - analyze
+    - plan
+    - execute
+    - verify
+    timeout: 3600
