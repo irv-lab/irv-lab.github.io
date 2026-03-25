@@ -27,8 +27,8 @@ profiles:
     category: Undergraduate
     info: 
     email: lej555a@naver.com
-  - name: Sahoon Hong
-    image: under_sahoonhong.jpeg
+  - name: Sahun Hong
+    image: under_sahunhong.jpeg
     category: Undergraduate
     info:
     email: hoonie8530@gmail.com
