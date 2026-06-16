@@ -14,8 +14,17 @@ nav_order: 2
 
 {% include bib_search.liquid %}
 
+<!-- In Review: papers marked with status={in-review} in _bibliography/papers.bib -->
+{% capture in_review %}{% bibliography --query @*[status=in-review] --group_by none %}{% endcapture %}
+{% if in_review contains '<li' %}
+<div class="publications">
+<h2 class="bibliography">In Review</h2>
+{{ in_review }}
+</div>
+{% endif %}
+
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --query @*[status!=in-review] %}
 
 </div>
