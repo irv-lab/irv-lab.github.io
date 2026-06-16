@@ -32,6 +32,11 @@ profiles:
     category: Undergraduate
     info:
     email: hoonie8530@gmail.com
+  - name: Sangwon Yoo
+    image: blank.jpg
+    category: Undergraduate
+    info: 
+    email: 
   - name: Chunwoong Park
     image: master_chunwoongpark.jpg
     category: Master
