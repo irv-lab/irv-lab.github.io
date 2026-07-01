@@ -32,7 +32,7 @@ profiles:
     category: Undergraduate
     info:
     email: hoonie8530@gmail.com
-  - name: Sangwon Yoo
+  - name: Sangwon Yu
     image: under_sangwonyoo.jpeg
     category: Undergraduate
     info: 
