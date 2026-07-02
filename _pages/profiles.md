@@ -37,6 +37,11 @@ profiles:
     category: Undergraduate
     info: 
     email: 
+  - name: Wonmo Kang
+    image: under_wonmokang.jpeg
+    category: Undergraduate
+    info: 
+    email: 
   - name: Chunwoong Park
     image: master_chunwoongpark.jpg
     category: Master
