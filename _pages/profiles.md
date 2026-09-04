@@ -42,6 +42,16 @@ profiles:
     category: Undergraduate
     info: 
     email: 
+  - name: Jeongsu Ko
+    image: under_jeongsuko.jpeg
+    category: Undergraduate
+    info:
+    email:
+  - name: Geonhee Lee
+    image: under_gunheelee.jpeg
+    category: Undergraduate
+    info:
+    email:
   - name: Chunwoong Park
     image: master_chunwoongpark.jpg
     category: Master
