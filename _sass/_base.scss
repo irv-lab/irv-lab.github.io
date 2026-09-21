@@ -287,6 +287,23 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-text-color);
   }
 
+  .navbar-brand.site-logo {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .site-logo-image {
+    display: block;
+    width: auto;
+    height: 38px;
+  }
+
+  .site-logo-image-mobile {
+    display: none;
+  }
+
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
 
@@ -339,6 +356,19 @@ ul.task-list input[type="checkbox"] {
           color: var(--global-theme-color);
         }
       }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar.navbar-light {
+    .site-logo-image-desktop {
+      display: none;
+    }
+
+    .site-logo-image-mobile {
+      display: block;
+      height: 36px;
     }
   }
 }
