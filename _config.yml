@@ -18,7 +18,8 @@ footer_address3: +82-31-750-5797
 
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: logo-symbol.png # the favicon image in /assets/img/
+icon: logo-symbol-light.png # the favicon image in /assets/img/ for light browser chrome
+icon_dark: logo-symbol-dark.png # the favicon image in /assets/img/ for dark browser chrome
 
 url: https://irv-lab.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root

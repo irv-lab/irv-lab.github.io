@@ -300,6 +300,10 @@ ul.task-list input[type="checkbox"] {
     height: 38px;
   }
 
+  .site-logo-image-dark {
+    display: none;
+  }
+
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
 
@@ -353,6 +357,16 @@ ul.task-list input[type="checkbox"] {
         }
       }
     }
+  }
+}
+
+html[data-theme="dark"] .navbar.navbar-light {
+  .site-logo-image-light {
+    display: none;
+  }
+
+  .site-logo-image-dark {
+    display: block;
   }
 }
 
