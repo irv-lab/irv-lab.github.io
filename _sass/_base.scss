@@ -300,10 +300,6 @@ ul.task-list input[type="checkbox"] {
     height: 38px;
   }
 
-  .site-logo-image-mobile {
-    display: none;
-  }
-
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
 
@@ -362,13 +358,8 @@ ul.task-list input[type="checkbox"] {
 
 @media (max-width: 575.98px) {
   .navbar.navbar-light {
-    .site-logo-image-desktop {
-      display: none;
-    }
-
-    .site-logo-image-mobile {
-      display: block;
-      height: 36px;
+    .site-logo-image {
+      height: 30px;
     }
   }
 }

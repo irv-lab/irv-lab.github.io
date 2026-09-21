@@ -2,21 +2,10 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand site-logo" href="{{ '/' | relative_url }}" aria-label="IRV Lab">
-          <img
-            class="site-logo-image site-logo-image-desktop"
-            src="{{ '/assets/img/logo-navbar.png' | relative_url }}"
-            alt="IRV Lab"
-          >
-          <img
-            class="site-logo-image site-logo-image-mobile"
-            src="{{ '/assets/img/logo-symbol.png' | relative_url }}"
-            alt=""
-            aria-hidden="true"
-          >
-        </a>
-      {% elsif site.enable_navbar_social %}
+      <a class="navbar-brand site-logo" href="{{ '/' | relative_url }}" aria-label="IRV Lab">
+        <img class="site-logo-image" src="{{ '/assets/img/logo-navbar.png' | relative_url }}" alt="">
+      </a>
+      {% if page.permalink == '/' and site.enable_navbar_social %}
         <!-- Social Icons -->
         <div class="navbar-brand social">{% include social.liquid %}</div>
       {% endif %}
@@ -38,20 +27,6 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
-          {% endfor %}
-
-          <!-- About -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
-              {% if page.permalink == '/' %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
-            </a>
-          </li>
-
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
