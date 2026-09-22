@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://irv-lab.github.io/sitemap.xml
